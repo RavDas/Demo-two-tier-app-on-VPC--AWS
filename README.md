@@ -38,8 +38,15 @@ Set up one NAT gateway for each Availability Zone to ensure a more robust system
 If instances need to access an S3 bucket, choose the S3 Gateway option. This helps instances in your private subnet reach Amazon S3. It's cost-free, so you might as well keep this option enabled even if you're not currently using S3.
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/c62bbcb6-c58c-43ee-98df-da933ac6f427" alt="5" width="600"/>
+
+Creation of the VPC Workflow
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b5e6d3eb-6a48-4d78-a75b-1dad23d4413b" alt="6" width="600"/>
+
+Created VPC Workflow Architecture 
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/ec895db5-bf36-45a8-9c02-f67f364e9ad9" alt="7" width="600"/>
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/6b5c9733-753e-4a68-85db-8266b3da3579" alt="8" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/39b810e9-8107-4621-a902-5e8c16049ec1" alt="9" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/76511b62-75bf-4354-b1c5-caa7b5802963" alt="10" width="600"/>
