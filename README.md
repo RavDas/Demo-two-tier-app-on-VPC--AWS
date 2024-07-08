@@ -2,14 +2,14 @@
 
 This example demonstrates how to create a VPC that can be used for servers in a production environment.
 
-![image](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/e7f8ab91-1ee8-4597-a5ea-96897e74c45f){: width="50%"}
+![image](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/e7f8ab91-1ee8-4597-a5ea-96897e74c45f | width=100)
 
 The VPC has public and private subnets in two Availability Zones. Each public subnet contains a NAT gateway and a Load Balancer node. To improve resiliency, I deploy the servers in two Availability Zones using an Auto Scaling group and an Application Load balancer. For additional security, I deploy the servers in private subnets. The servers receive requests through the load balancer. The servers can connect to the internet by using a NAT gateway. To improve resiliency, I deploy the NAT gateway in both Availability Zones. Using a NAT gateway hides the IP address of the Application instance in the private subnet. If the application needs to access anything from outside(eg. API calling over the Internet) the NAT gateway will mask the IP of the Application instance.
 
 
-![1](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/801483be-15bb-4e9a-95ee-6ae83301c702){: width="50%"}
-![2](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/a506571f-d000-447e-8f20-573d65f05f96){: width="50%"}
-![3](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/07a6849e-b643-41a8-a2d6-4bc6ee25c194)
+![1](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/801483be-15bb-4e9a-95ee-6ae83301c702 | width=100)
+![2](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/a506571f-d000-447e-8f20-573d65f05f96 | width=100)
+![3](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/07a6849e-b643-41a8-a2d6-4bc6ee25c194 | width=100)
 
 ![4](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/93175247-6257-4053-bf37-72951d6e3731)
 ![5](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/c62bbcb6-c58c-43ee-98df-da933ac6f427)
