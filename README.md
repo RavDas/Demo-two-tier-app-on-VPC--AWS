@@ -1,9 +1,9 @@
 # Demo-two-tier-app-on-VPC--AWS
 
-This example demonstrates how to create a VPC that can be used for servers in a production environment.
+This example demonstrates how to create a VPC that can be used for servers in a production environment. \
 
 
-The VPC has public and private subnets in two Availability Zones. Each public subnet contains a NAT gateway and a Load Balancer node. To improve resiliency, I deploy the servers in two Availability Zones using an Auto Scaling group and an Application Load balancer. For additional security, I deploy the servers in private subnets. The servers receive requests through the load balancer. The servers can connect to the internet by using a NAT gateway. To improve resiliency, I deploy the NAT gateway in both Availability Zones. Using a NAT gateway hides the IP address of the Application instance in the private subnet. If the application needs to access anything from outside(eg. API calling over the Internet) the NAT gateway will mask the IP of the Application instance.
+The VPC has public and private subnets in two Availability Zones. Each public subnet contains a NAT gateway and a Load Balancer node. To improve resiliency, I deploy the servers in two Availability Zones using an Auto Scaling group and an Application Load balancer. For additional security, I deploy the servers in private subnets. The servers receive requests through the load balancer. The servers can connect to the internet by using a NAT gateway. To improve resiliency, I deploy the NAT gateway in both Availability Zones. Using a NAT gateway hides the IP address of the Application instance in the private subnet. If the application needs to access anything from outside(eg. API calling over the Internet) the NAT gateway will mask the IP of the Application instance. \
 
 ### Access AWS Console
 
@@ -12,8 +12,27 @@ The VPC has public and private subnets in two Availability Zones. Each public su
 On the dashboard, click on "Create VPC."
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/a506571f-d000-447e-8f20-573d65f05f96" alt="2" width="600"/>
+
+Preview on the two tier architecture 
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/07a6849e-b643-41a8-a2d6-4bc6ee25c194" alt="3" width="600"/>
+
+### Configure VPC:
+
+Select VPC and more \
+
+Give VPC a name \
+
+Use ddefault settings for IPv4 CIDR block \
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/93175247-6257-4053-bf37-72951d6e3731" alt="4" width="600"/>
+
+### Configure Subnets:
+
+Choose to have VPC in two different Availability Zones for better reliability. \
+
+Here we use two public and two private subnets for applications inside the VPC.
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/c62bbcb6-c58c-43ee-98df-da933ac6f427" alt="5" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b5e6d3eb-6a48-4d78-a75b-1dad23d4413b" alt="6" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/ec895db5-bf36-45a8-9c02-f67f364e9ad9" alt="7" width="600"/>
