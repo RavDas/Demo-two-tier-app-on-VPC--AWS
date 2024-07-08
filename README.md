@@ -3,7 +3,7 @@
 This example demonstrates how to create a VPC that can be used for servers in a production environment. \
 
 
-The VPC has public and private subnets in two Availability Zones. Each public subnet contains a NAT gateway and a Load Balancer node. To improve resiliency, I deploy the servers in two Availability Zones using an Auto Scaling group and an Application Load balancer. For additional security, I deploy the servers in private subnets. The servers receive requests through the load balancer. The servers can connect to the internet by using a NAT gateway. To improve resiliency, I deploy the NAT gateway in both Availability Zones. Using a NAT gateway hides the IP address of the Application instance in the private subnet. If the application needs to access anything from outside(eg. API calling over the Internet) the NAT gateway will mask the IP of the Application instance. \
+The VPC has public and private subnets in two Availability Zones. Each public subnet contains a NAT gateway and a Load Balancer node. To improve resiliency, I deploy the servers in two Availability Zones using an Auto Scaling group and an Application Load balancer. For additional security, I deploy the servers in private subnets. The servers receive requests through the load balancer. The servers can connect to the internet by using a NAT gateway. To improve resiliency, I deploy the NAT gateway in both Availability Zones. Using a NAT gateway hides the IP address of the Application instance in the private subnet. If the application needs to access anything from outside(eg. API calling over the Internet) the NAT gateway will mask the IP of the Application instance. 
 
 ### Access AWS Console
 
@@ -19,19 +19,23 @@ Preview on the two tier architecture
 
 ### Configure VPC:
 
-Select VPC and more \
+Select VPC and more 
 
-Give VPC a name \
+Give VPC a name 
 
-Use ddefault settings for IPv4 CIDR block \
+Use default settings for IPv4 CIDR block 
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/93175247-6257-4053-bf37-72951d6e3731" alt="4" width="600"/>
 
 ### Configure Subnets:
 
-Choose to have VPC in two different Availability Zones for better reliability. \
+Choose to have VPC in two different Availability Zones for better reliability. 
 
 Here we use two public and two private subnets for applications inside the VPC.
+
+Set up one NAT gateway for each Availability Zone to ensure a more robust system.
+
+If instances need to access an S3 bucket, choose the S3 Gateway option. This helps instances in your private subnet reach Amazon S3. It's cost-free, so you might as well keep this option enabled even if you're not currently using S3.
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/c62bbcb6-c58c-43ee-98df-da933ac6f427" alt="5" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b5e6d3eb-6a48-4d78-a75b-1dad23d4413b" alt="6" width="600"/>
