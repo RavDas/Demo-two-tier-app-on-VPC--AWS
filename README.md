@@ -2,7 +2,7 @@
 
 This example demonstrates how to create a VPC that can be used for servers in a production environment.
 
-<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/801483be-15bb-4e9a-95ee-6ae83301c702" alt="1" width="500"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/801483be-15bb-4e9a-95ee-6ae83301c702" alt="1" width="700"/>
 
 The VPC has public and private subnets in two Availability Zones. Each public subnet contains a NAT gateway and a Load Balancer node. To improve resiliency, I deploy the servers in two Availability Zones using an Auto Scaling group and an Application Load balancer. For additional security, I deploy the servers in private subnets. The servers receive requests through the load balancer. The servers can connect to the internet by using a NAT gateway. To improve resiliency, I deploy the NAT gateway in both Availability Zones. Using a NAT gateway hides the IP address of the Application instance in the private subnet. If the application needs to access anything from outside(eg. API calling over the Internet) the NAT gateway will mask the IP of the Application instance.
 
