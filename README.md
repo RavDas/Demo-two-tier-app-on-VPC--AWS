@@ -47,14 +47,48 @@ Created VPC Workflow Architecture
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/ec895db5-bf36-45a8-9c02-f67f364e9ad9" alt="7" width="600"/>
 
+## Creating Auto Scaling Groups
+
+Go to EC2 instance >Auto Scaling
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/6b5c9733-753e-4a68-85db-8266b3da3579" alt="8" width="600"/>
+
+Goto to Auto scaling Group
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/39b810e9-8107-4621-a902-5e8c16049ec1" alt="9" width="600"/>
+
+Create launch instance template
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/76511b62-75bf-4354-b1c5-caa7b5802963" alt="10" width="600"/>
+
+Create a template and with Ubuntu Image
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/f8cccc45-790a-47cd-a9db-60eb91e92709" alt="11" width="600"/>
+
+Select Instance Type
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/5a51e8d5-017e-4eb9-883f-584bf530d76a" alt="12" width="600"/>
+
+Create new Key pair -use pem file format at save the key pair file locally.
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/ebc91651-472b-4a14-b971-9d473598500b" alt="13" width="600"/>
+
+In Network Settings > Fill below details
+
+Give a name for the Security Group
+
+Note- select your created VPC here
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/25424af0-37ad-4e41-99ed-05e672c5ebb5" alt="14" width="600"/>
+
+Setup Inbound Security Group Rules - Open port 8000 for the application and port 22 to ssh into the EC2 instance
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/bb1cd968-e9ba-4803-b966-91509d15f64e" alt="15" width="600"/>
+
+### Auto Scaling Group 
+
+Select Created launch Template
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/8817d089-fe9f-4874-8ef7-574e432050ad" alt="16" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/796317a8-ab46-4612-b657-7a1af6721bdd" alt="17" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/e5af4027-7ebb-49d0-b403-a1c3a5bda8e1" alt="18" width="600"/>
