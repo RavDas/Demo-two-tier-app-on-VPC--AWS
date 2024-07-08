@@ -1,4 +1,4 @@
-# Demo-two-tier-app-on-VPC--AWS
+# Demo two tier app on VPC - AWS
 
 This example demonstrates how to create a VPC that can be used for servers in a production environment. \
 
