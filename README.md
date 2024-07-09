@@ -242,7 +242,7 @@ Now we have successfully connected private subnet using bastion-host
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/1f6e04c4-edf7-4904-ac5d-33cf834dca66" alt="b" width="600"/>
 
 
-Now lets create Simple HTML file
+Now lets create a simple HTML file
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/44eb506c-2deb-408c-a70a-0549c2a86888" alt="c" width="600"/>
 
@@ -369,4 +369,7 @@ Finally Application is deployed.
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/4e6fa37b-2569-45fe-acda-e7ab828ce15f" alt="o" width="600"/>
 
 
-You can try to write another HTML file
+Here I have deploy the application on one private subnet/ instance. Therefore Load Balancer will always direct it to that subnet/ instance since it is the healthy one as other instance has nothing deployed. You can try to write another HTML file and deploy it on the other private subnet and observe how Load Balancer fowards traffic to the two private instances.
+
+
+THE END!!!
