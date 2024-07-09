@@ -122,28 +122,30 @@ Scaling limits
   
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/245ef6d5-2775-4c96-8556-58351ee9eaba" alt="21" width="600"/>
 
+
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/3205e037-4b0f-4b26-b8d6-9d9c3d43b439" alt="22" width="600"/>
+
 Add notifications -set as default (optional)
 
 Add tags-Set as default (optional)
 
 Review and Create Auto scaling Group
 
-<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/3205e037-4b0f-4b26-b8d6-9d9c3d43b439" alt="22" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/4447d846-f836-4826-b4b4-412551627d2a" alt="24" width="600"/>
 
 Auto scaling Group is created successfully
 
-<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/4447d846-f836-4826-b4b4-412551627d2a" alt="24" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/4dab2927-35b0-4e0b-93ce-2fba39d28a63" alt="25" width="600"/>
 
 Now go to EC2 Dashboard -> Instances - Observe two instances are create in private subnet
 
 Goto on Instance ID ,and observe private subnet
 
-
-<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/4dab2927-35b0-4e0b-93ce-2fba39d28a63" alt="25" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/13c409e1-9c06-420e-9769-985f4cfb23eb" alt="26" width="600"/>
 
 Go to second private subnet instance -observe subnet ID
 
-<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/13c409e1-9c06-420e-9769-985f4cfb23eb" alt="26" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b1f9b95c-9bdd-478d-adc2-a191128fbdab" alt="27" width="600"/>
 
 ### Install the application on Private subnet EC2 instance
 
@@ -154,6 +156,5 @@ Create a Bastion Host
 * Go to the EC2 dashboard
 
 * Go to instances -> Launch Instance
-
-<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b1f9b95c-9bdd-478d-adc2-a191128fbdab" alt="27" width="600"/>
+* 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/8227d06a-80c8-49a3-958c-38052368c40f" alt="28" width="600"/>
