@@ -327,8 +327,7 @@ Then click on "Include  as pending" and "Create target group"
 
 Target group creation is successful.
 
-<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b79cb865-4d9f-458a-9739-c2d511536cdf" alt="e 1" width="600"/>
-
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/8b5c8c47-1953-4d05-ae73-a57cb86a95c7" alt="e" width="600"/>
 
 After you have created a target group, then go to the "Listerns and routing" section again and add the newly created traget group - "aws-prod-example".
 
@@ -338,7 +337,7 @@ In the same section, choose the protocola as HTTP and port 80. (The port which w
 
 Load Balancer is created successfully. Click on View Load Balancer to verify the creation
 
-<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/8b5c8c47-1953-4d05-ae73-a57cb86a95c7" alt="e" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b79cb865-4d9f-458a-9739-c2d511536cdf" alt="e 1" width="600"/>
 
 Click on Load Balancer name 
 
