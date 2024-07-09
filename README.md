@@ -340,11 +340,9 @@ Load Balancer is created successfully. Click on View Load Balancer to verify the
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/8b5c8c47-1953-4d05-ae73-a57cb86a95c7" alt="e" width="600"/>
 
-
+Click on Load Balancer name 
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/6f279936-9e91-46f4-931a-82554200a61f" alt="f" width="600"/>
-
-Click on Load Balancer name 
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/1653990e-66a0-44b1-bb81-cbe16443502d" alt="g" width="600"/>
 
