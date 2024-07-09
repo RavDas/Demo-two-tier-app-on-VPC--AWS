@@ -175,19 +175,19 @@ Go to terminal ,and run below command
 
 ```
 scp -i /home/raveen/Documents/aws_login.pem /home/raveen/Documents/aws_login.pem ubuntu@52.207.224.163:/home/ubuntu/
-```
-<!--
 
-# scp -i <.pem file name> <source path> <target path>
--->
+## scp -i <.pem file name> <source path> <target path>
+
+```
 
 Check the file is transferred successfully or not
 
 ```
 ssh -i aws_login.pem ubuntu@52.207.224.163
-```
-ssh -i <.pem file name> ubuntu@<bastion-host_ip>
 
+### ssh -i <.pem file name> ubuntu@<bastion-host_ip>
+
+```
 
 Now lets connect ssh with private instance,
 
