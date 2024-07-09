@@ -72,7 +72,7 @@ Select Instance Type
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/5a51e8d5-017e-4eb9-883f-584bf530d76a" alt="12" width="600"/>
 
-Create new Key pair -use pem file format at save the key pair file locally.
+Create new key pair - use pem file format and save the key pair file locally. / Use a key pair earlier created.
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/ebc91651-472b-4a14-b971-9d473598500b" alt="13" width="600"/>
 
@@ -93,10 +93,32 @@ Setup Inbound Security Group Rules - Open port 8000 for the application and port
 Select Created launch Template
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/8817d089-fe9f-4874-8ef7-574e432050ad" alt="16" width="600"/>
+
+Set Version as Default
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/796317a8-ab46-4612-b657-7a1af6721bdd" alt="17" width="600"/>
+
+In the Network -> Select your created VPC and private subnets
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/e5af4027-7ebb-49d0-b403-a1c3a5bda8e1" alt="18" width="600"/>
+
+In the Configured Advanced options page - We will attach a load balancer later
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/42cdf822-1362-4507-ae16-96b7cab5cc1d" alt="19" width="600"/>
+
+Set Configure group size and scaling
+
+Desired Capacity -Set 2
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/deb9c824-4693-4601-977a-21756bc0d86b" alt="20" width="600"/>
+
+Scaling limits
+
+* Min desired capacity- Set 1
+
+* Max desired capacity - Set 4
+
+* Automatic scaling - select No scaling policies
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/245ef6d5-2775-4c96-8556-58351ee9eaba" alt="21" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/3205e037-4b0f-4b26-b8d6-9d9c3d43b439" alt="22" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/fd6aaf5b-e257-4adf-aa2e-ce6de1b09698" alt="23" width="600"/>
