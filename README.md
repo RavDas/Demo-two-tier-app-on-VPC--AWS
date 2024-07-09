@@ -117,11 +117,10 @@ Scaling limits
 * Min desired capacity- Set 1
 
 * Max desired capacity - Set 4
-
-* Automatic scaling - select No scaling policies
   
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/245ef6d5-2775-4c96-8556-58351ee9eaba" alt="21" width="600"/>
 
+Automatic scaling - select No scaling policies
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/3205e037-4b0f-4b26-b8d6-9d9c3d43b439" alt="22" width="600"/>
 
