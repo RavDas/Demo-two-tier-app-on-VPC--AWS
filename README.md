@@ -176,8 +176,10 @@ Go to terminal ,and run below command
 ```
 scp -i /home/raveen/Documents/aws_login.pem /home/raveen/Documents/aws_login.pem ubuntu@52.207.224.163:/home/ubuntu/
 ```
-scp -i <.pem file name> <source path> <target path>
+<!--
 
+# scp -i <.pem file name> <source path> <target path>
+-->
 
 Check the file is transferred successfully or not
 
