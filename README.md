@@ -18,6 +18,10 @@ On the dashboard, click on "Create VPC."
 
 Preview on the two tier architecture 
 
+Above architecture is a default one provided by AWS when creating a VPC. Here in the VPC there are two public and private subnets respectively. And the public subnets are attached with one route table and private subnets are attached with another. Subnets should be attched with route tables. Route tables define how to handle the traffic within the subnets. After that public subnets have a destination called internet gateway via their route table that opens the subnets to the internet while private subnets are are destined to a VPC endpoint - S3 bucket. Instead of S3 bucket you can either choose any other endpoint or not.
+
+Change the architecture according to your needs. Below is based on that.
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/07a6849e-b643-41a8-a2d6-4bc6ee25c194" alt="3" width="600"/>
 
 ### Configure VPC:
@@ -229,8 +233,29 @@ python3 -m http.server 8000
 Now go to EC2 Dashboard -> Click on Load Balancer
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/c01b8bc1-0b0e-4c0b-9dc6-8a9abb475504" alt="e" width="600"/>
+
+Click on Create Load Balancer
+
+Select Application Load Balancer->Click on create
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/d6d9d766-24fc-46fd-8a60-1beb82d8e8c4" alt="f" width="600"/>
+
+Now create Load Balancer,
+
+1.Enter Load Balancer Name
+
+2.Scheme-Set as default (Internet facing load balancer routes reponses from clients over the internet to target instances.)
+
+3.IP address type -set as default (IPv4)
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/bc5795e5-0f80-480f-8164-9f009f723a78" alt="g" width="600"/>
+
+Network Mapping
+
+1.Select Created VPC earlier
+
+2.Mapping -Select public subnets
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/787029d8-3891-49f5-ae98-70745a4186c1" alt="h" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/d7182c16-6153-4abe-a3a9-744afbfc2edd" alt="i" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9dff422f-5b42-47f4-883a-6f9484bc8beb" alt="k" width="600"/>
