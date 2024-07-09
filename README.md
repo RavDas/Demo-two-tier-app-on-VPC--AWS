@@ -5,9 +5,9 @@ This example demonstrates how to create a VPC that can be used for servers in a 
 ![image](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/cbea5b14-c9d0-4df1-be0f-f093deee91da)
 
 
-The VPC has public and private subnets in two Availability Zones. Each public subnet contains a NAT gateway and a Load Balancer node. To improve resiliency, I deploy the servers in two Availability Zones using an Auto Scaling group and an Application Load balancer. 
+The VPC has public and private subnets in two Availability Zones. Each public subnet contains a NAT gateway and a Load Balancer node. To improve resiliency, I deploy the servers in two Availability Zones using an Auto Scaling group and an Application Load Balancer. 
 
-For additional security, I deploy the servers in private subnets. The servers receive requests through the load balancer. The servers can connect to the internet by using a NAT gateway. 
+For additional security, I deploy the servers in private subnets. The servers receive requests through the Load Balancer. The servers can connect to the internet by using a NAT gateway. 
 
 To improve resiliency, I deploy the NAT gateway in both Availability Zones. Using a NAT gateway hides the IP address of the Application instance in the private subnet. If the application needs to access anything from outside(eg. API calling over the Internet) the NAT gateway will mask the IP of the Application instance. 
 
@@ -112,7 +112,7 @@ In the Network -> Select your created VPC and private subnets
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/e5af4027-7ebb-49d0-b403-a1c3a5bda8e1" alt="18" width="600"/>
 
-In the Configured Advanced options page - We will attach a load balancer later
+In the Configured Advanced options page - We will attach a Load Balancer later
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/42cdf822-1362-4507-ae16-96b7cab5cc1d" alt="19" width="600"/>
 
@@ -178,7 +178,7 @@ Choose an Ubuntu Image (AMI) for your Bastion host.
 
 Instance Type - t2.micro
 
-Choose a key pair (aws-prod-example-keypair.pem)
+Choose a key pair (aws-prod-example.pem)
 
 ![b](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/668b3f66-10f8-4d7f-984d-ccf37ab077f1)
 
@@ -205,7 +205,7 @@ Now we need to securely copied our .pem file which is generated using key-pair c
 Go to terminal ,and run below command
 
 ```
-scp -i /home/raveen/Documents/.-keypair.pem /home/raveen/Documents/aws-prod-example-keypair.pem ubuntu@52.207.224.163:/home/ubuntu/
+scp -i /home/raveen/Documents/.-keypair.pem /home/raveen/Documents/aws-prod-example.pem ubuntu@52.207.224.163:/home/ubuntu/
 
 ## scp -i <.pem file name> <source path> <target path>
 
@@ -214,7 +214,7 @@ scp -i /home/raveen/Documents/.-keypair.pem /home/raveen/Documents/aws-prod-exam
 Check the file is transferred successfully or not
 
 ```
-ssh -i aws-prod-example-keeypair.pem ubuntu@52.207.224.163
+ssh -i aws-prod-example.pem ubuntu@52.207.224.163
 
 ### ssh -i <.pem file name> ubuntu@<bastion-host_ip>
 
@@ -232,7 +232,7 @@ Now lets connect ssh with private instance,
 3.Run below command in terminal
 
 ```
-ssh -i "aws-prod-example-keypair.pem" ubuntu@10.0.141.77
+ssh -i "aws-prod-example.pem" ubuntu@10.0.141.77
 
 ### ssh -i <pem file name> ubuntu@<ip address of private instance>
  
@@ -271,7 +271,7 @@ Now create Load Balancer,
 
 1.Enter Load Balancer Name
 
-2.Scheme-Set as default (Internet facing load balancer routes reponses from clients over the internet to target instances.)
+2.Scheme-Set as default (Internet facing Load Balancer routes reponses from clients over the internet to target instances.)
 
 3.IP address type - set as default (IPv4)
 
@@ -281,7 +281,7 @@ Network Mapping
 
 1.Select Created VPC earlier
 
-2.Mapping - Select the two availability zones with their relavant public subnets cretaed earlier. (Load balancers are connected via the public subnets of the VPC. Load balancer should be in the public subnets of the VPC)
+2.Mapping - Select the two availability zones with their relavant public subnets cretaed earlier. (Load Balancers are connected via the public subnets of the VPC. Load Balancer should be in the public subnets of the VPC)
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/787029d8-3891-49f5-ae98-70745a4186c1" alt="h" width="600"/>
 
@@ -305,7 +305,7 @@ Choose a target type - Instances
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/833fd128-1fa5-45b9-97e0-1174e2dc1448" alt="a" width="600"/>
 
-Enter target group name:aws-prod-example
+Enter target group name : aws-prod-example
 
 Protocol :port - HTTP ,Enter port 8000 (We just need to run HTTP protocols only and we ran a simple HTML file on port 8000 of the private instance)
 
@@ -342,6 +342,8 @@ Load Balancer is created successfully. Click on View Load Balancer to verify the
 Click on Load Balancer name 
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/6f279936-9e91-46f4-931a-82554200a61f" alt="f" width="600"/>
+
+Load Balancer details
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/1653990e-66a0-44b1-bb81-cbe16443502d" alt="g" width="600"/>
 
