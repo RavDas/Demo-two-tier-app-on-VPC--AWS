@@ -170,17 +170,17 @@ Create a Bastion Host
 
 Enter EC2 instance name here
 
-![d](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/e7428ad0-3e1a-4abe-a5d7-3697ccba9969)
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/e7428ad0-3e1a-4abe-a5d7-3697ccba9969" alt="d" width="600"/>
 
 Choose an Ubuntu Image (AMI) for your Bastion host.
 
-![a](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/ce5b7d1b-f926-405b-aafe-90fc301658a3)
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/ce5b7d1b-f926-405b-aafe-90fc301658a3" alt="a" width="600"/>
 
 Instance Type - t2.micro
 
 Choose a key pair (aws-prod-example.pem)
 
-![b](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/668b3f66-10f8-4d7f-984d-ccf37ab077f1)
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/668b3f66-10f8-4d7f-984d-ccf37ab077f1" alt="b" width="600"/>
 
 Network settings ->
 
@@ -193,7 +193,7 @@ Network settings ->
 * Create security group
 
 
-![c](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9547bc45-920f-4bf2-8a46-e0737aeccc32)
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9547bc45-920f-4bf2-8a46-e0737aeccc32" alt="c" width="600"/>
 
 
 Why a Bastion Host?
