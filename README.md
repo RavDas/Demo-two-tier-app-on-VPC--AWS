@@ -60,7 +60,7 @@ Created VPC Workflow Architecture
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/ec895db5-bf36-45a8-9c02-f67f364e9ad9" alt="7" width="600"/>
 
-## Creating Auto Scaling Groups
+### Creating Auto Scaling Groups
 
 Go to EC2 instance >Auto Scaling
 
@@ -118,13 +118,13 @@ In the Configured Advanced options page - We will attach a Load Balancer later
 
 Set Configure group size and scaling
 
-Desired Capacity -Set 2
+Desired Capacity - Set 2
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/deb9c824-4693-4601-977a-21756bc0d86b" alt="20" width="600"/>
 
 Scaling limits
 
-* Min desired capacity- Set 1
+* Min desired capacity - Set 1
 
 * Max desired capacity - Set 4
   
@@ -156,7 +156,7 @@ Go to second private subnet instance -observe subnet ID
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b1f9b95c-9bdd-478d-adc2-a191128fbdab" alt="27" width="600"/>
 
-### Install the application on Private subnet EC2 instance
+### Install the application on Private subnet EC2 instance via a Bastion Host
 
 As you observe there is no public IP address for two private instances. To access those instances we need to create bastion -host EC2 instances.
 
@@ -182,7 +182,7 @@ Choose a key pair (aws-prod-example.pem)
 
 ![b](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/668b3f66-10f8-4d7f-984d-ccf37ab077f1)
 
-Network settings->
+Network settings ->
 
 * Select your created VPC
 
@@ -242,7 +242,6 @@ Now we have successfully connected private subnet using bastion-host
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/1f6e04c4-edf7-4904-ac5d-33cf834dca66" alt="b" width="600"/>
 
 
-
 Now lets create Simple HTML file
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/44eb506c-2deb-408c-a70a-0549c2a86888" alt="c" width="600"/>
@@ -267,7 +266,7 @@ Select Application Load Balancer -> Click on create
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/d6d9d766-24fc-46fd-8a60-1beb82d8e8c4" alt="f" width="600"/>
 
-Now create Load Balancer,
+Now create a Load Balancer,
 
 1.Enter Load Balancer Name
 
@@ -277,7 +276,7 @@ Now create Load Balancer,
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/bc5795e5-0f80-480f-8164-9f009f723a78" alt="g" width="600"/>
 
-Network Mapping
+Network Mapping,
 
 1.Select Created VPC earlier
 
@@ -289,23 +288,17 @@ Network Mapping
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/d7182c16-6153-4abe-a3a9-744afbfc2edd" alt="i" width="600"/>
 
-Listeners and routing 
+Listeners and routing,
+
+We need to create a target group to define which private instances should be accessible for the Load Balancer.
 
 Click on Create target group
 
-Specify group Details
-
-Choose a target type - Instances
-
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/833fd128-1fa5-45b9-97e0-1174e2dc1448" alt="a" width="600"/>
-
-We need to create a target group to define which private instances should be accessible for the Load Balancer.
 
 Specify group details - Choose target type as Instances ( We need the Load Balancer for our private subnets / instances that host our application)
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9dff422f-5b42-47f4-883a-6f9484bc8beb" alt="k" width="600"/>
-
-
 
 Enter target group name : aws-prod-example
 
@@ -376,3 +369,4 @@ Finally Application is deployed.
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/4e6fa37b-2569-45fe-acda-e7ab828ce15f" alt="o" width="600"/>
 
 
+You can try to write another HTML file
