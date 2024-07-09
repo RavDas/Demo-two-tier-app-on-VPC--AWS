@@ -1,4 +1,4 @@
-# Demo two tier app on VPC - AWS
+![j](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b607ab78-82db-4880-a8b8-55153cfb54db)# Demo two tier app on VPC - AWS
 
 This example demonstrates how to create a VPC that can be used for servers in a production environment. 
 
@@ -155,5 +155,53 @@ Create a Bastion Host
 * Go to the EC2 dashboard
 
 * Go to instances -> Launch Instance
-* 
+  
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/8227d06a-80c8-49a3-958c-38052368c40f" alt="28" width="600"/>
+
+![d](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/e7428ad0-3e1a-4abe-a5d7-3697ccba9969)
+
+![a](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/ce5b7d1b-f926-405b-aafe-90fc301658a3)
+![b](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/668b3f66-10f8-4d7f-984d-ccf37ab077f1)
+![c](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9547bc45-920f-4bf2-8a46-e0737aeccc32)
+
+
+Why a Bastion Host?
+
+A Bastion host acts as a secure gateway, providing a controlled point of entry to your private subnet. This ensures that access to your sensitive resources is both monitored and safeguarded.
+
+Now we need to securely copied our .pem file which is generated using key-pair creation into public instance (Bastion-host) using below command. Here your .pem file is needed to ssh into from one instance to another and for that .pem  file should be in both instances. So as my main intetion is to login to the private subnets via the bastion hosts, I need to have .pem file in my bastion-host as well. I have a copy in my local machine and I am going to copy it from my local machine to the bastion-host instance. (Or you can copy it from private instance to the bastion-host instance as well.)
+
+Go to terminal ,and run below command
+
+```
+scp -i /home/raveen/Documents/aws_login.pem /home/raveen/Documents/aws_login.pem ubuntu@52.207.224.163:/home/ubuntu/
+```
+scp -i <.pem file name> <source path> <target path>
+
+
+Check the file is transferred successfully or not
+
+```
+ssh -i aws_login.pem ubuntu@52.207.224.163
+```
+ssh -i <.pem file name> ubuntu@<bastion-host_ip>
+
+
+Now lets connect ssh with private instance,
+
+1.Go to Private subnet instances
+
+2.Copy private ip address
+
+
+![a](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/7494493a-7b7a-4962-b880-98814f8ed027)
+![b](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/1f6e04c4-edf7-4904-ac5d-33cf834dca66)
+![c](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/44eb506c-2deb-408c-a70a-0549c2a86888)
+![d](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/7ef03301-e74c-4abf-9d39-13abcb8a0d7e)
+![e](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/c01b8bc1-0b0e-4c0b-9dc6-8a9abb475504)
+![f](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/d6d9d766-24fc-46fd-8a60-1beb82d8e8c4)
+![g](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/bc5795e5-0f80-480f-8164-9f009f723a78)
+![h](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/787029d8-3891-49f5-ae98-70745a4186c1)
+![i](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/d7182c16-6153-4abe-a3a9-744afbfc2edd)
+
+![k](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9dff422f-5b42-47f4-883a-6f9484bc8beb)
