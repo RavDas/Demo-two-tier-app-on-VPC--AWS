@@ -263,7 +263,7 @@ Now go to EC2 Dashboard -> Click on Load Balancer
 
 Click on Create Load Balancer
 
-Select Application Load Balancer->Click on create
+Select Application Load Balancer -> Click on create
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/d6d9d766-24fc-46fd-8a60-1beb82d8e8c4" alt="f" width="600"/>
 
@@ -273,7 +273,7 @@ Now create Load Balancer,
 
 2.Scheme-Set as default (Internet facing load balancer routes reponses from clients over the internet to target instances.)
 
-3.IP address type -set as default (IPv4)
+3.IP address type - set as default (IPv4)
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/bc5795e5-0f80-480f-8164-9f009f723a78" alt="g" width="600"/>
 
@@ -291,11 +291,13 @@ Security Groups - Select all three option (Select the necessary security group t
 
 Listeners and routing 
 
-We need to create a target group to defin which private instance should be accessible for the Load Balancer
+We need to create a target group to define which private instances should be accessible for the Load Balancer.
 
-* Click on Create target group
+Specify group details - Choose target type as Instances ( We need the Load Balancer for our private subnets / instances that host our application)
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9dff422f-5b42-47f4-883a-6f9484bc8beb" alt="k" width="600"/>
+
+Click on Create target group
 
 Specify group Details
 
@@ -307,7 +309,7 @@ Enter target group name:aws-prod-example
 
 Protocol :port - HTTP ,Enter port 8000 (We just need to run HTTP protocols only and we ran a simple HTML file on port 8000 of the private instance)
 
-IP address type -IPv4
+IP address type - IPv4
 
 VPC - Selected the cretaed VPC
 
@@ -332,19 +334,44 @@ After you have created a target group, then go to the "Listerns and routing" sec
 
 In the same section, choose the protocola as HTTP and port 80. (The port which we open for the Load Balancer. Make sure to open prot 80 of the chosen security groups when creating the Load Balancer to allow inbound traffic on port 80)
 
-<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9dff422f-5b42-47f4-883a-6f9484bc8beb" alt="k" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/833fd128-1fa5-45b9-97e0-1174e2dc1448" alt="a" width="600"/>
 
-Load balancer is created successfully
+Load Balancer is created successfully. Click on View Load Balancer to verify the creation
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/8b5c8c47-1953-4d05-ae73-a57cb86a95c7" alt="e" width="600"/>
 
+
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/6f279936-9e91-46f4-931a-82554200a61f" alt="f" width="600"/>
+
+Click on Load Balancer name 
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/1653990e-66a0-44b1-bb81-cbe16443502d" alt="g" width="600"/>
+
+Listeners and rules - Select HTTP
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/8ec90f78-99c5-403a-bcf2-79bec3bcd385" alt="h" width="600"/>
+
+Click on Security -> Select your created Security Group ID
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/3ce1430e-5e2c-4ca6-bbe5-61f6afa74593" alt="j" width="600"/>
+
+Click on Edit Inbound Rule
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/1e3f02f4-0086-4e0a-9532-2c474ee6b72a" alt="k" width="600"/>
+
+Add port 80 for HTTP traffic -> click on Save
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/6128345d-e9d5-4d9a-9b79-f5113e6bd87b" alt="l" width="600"/>
+
+Go to Load Balancer - Copy DNS name ,and paste it in the browser
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/2f9357a0-9b53-41ad-93ef-93db4165cc24" alt="m" width="600"/>
+
+### Test the Application 
+
+Finally Application is deployed.
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/4e6fa37b-2569-45fe-acda-e7ab828ce15f" alt="o" width="600"/>
 
-![j](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b607ab78-82db-4880-a8b8-55153cfb54db)
+
