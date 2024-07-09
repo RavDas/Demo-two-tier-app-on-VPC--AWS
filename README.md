@@ -1,11 +1,15 @@
-![j](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b607ab78-82db-4880-a8b8-55153cfb54db)# Demo two tier app on VPC - AWS
+# Demo two tier app on VPC - AWS
 
 This example demonstrates how to create a VPC that can be used for servers in a production environment. 
 
 ![image](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/cbea5b14-c9d0-4df1-be0f-f093deee91da)
 
 
-The VPC has public and private subnets in two Availability Zones. Each public subnet contains a NAT gateway and a Load Balancer node. To improve resiliency, I deploy the servers in two Availability Zones using an Auto Scaling group and an Application Load balancer. For additional security, I deploy the servers in private subnets. The servers receive requests through the load balancer. The servers can connect to the internet by using a NAT gateway. To improve resiliency, I deploy the NAT gateway in both Availability Zones. Using a NAT gateway hides the IP address of the Application instance in the private subnet. If the application needs to access anything from outside(eg. API calling over the Internet) the NAT gateway will mask the IP of the Application instance. 
+The VPC has public and private subnets in two Availability Zones. Each public subnet contains a NAT gateway and a Load Balancer node. To improve resiliency, I deploy the servers in two Availability Zones using an Auto Scaling group and an Application Load balancer. 
+
+For additional security, I deploy the servers in private subnets. The servers receive requests through the load balancer. The servers can connect to the internet by using a NAT gateway. 
+
+To improve resiliency, I deploy the NAT gateway in both Availability Zones. Using a NAT gateway hides the IP address of the Application instance in the private subnet. If the application needs to access anything from outside(eg. API calling over the Internet) the NAT gateway will mask the IP of the Application instance. 
 
 
 ### Access AWS Console
@@ -18,7 +22,9 @@ On the dashboard, click on "Create VPC."
 
 Preview on the two tier architecture 
 
-Above architecture is a default one provided by AWS when creating a VPC. Here in the VPC there are two public and private subnets respectively. And the public subnets are attached with one route table and private subnets are attached with another. Subnets should be attched with route tables. Route tables define how to handle the traffic within the subnets. After that public subnets have a destination called internet gateway via their route table that opens the subnets to the internet while private subnets are are destined to a VPC endpoint - S3 bucket. Instead of S3 bucket you can either choose any other endpoint or not.
+Above architecture is a default one provided by AWS when creating a VPC. Here in the VPC there are two public and private subnets respectively. And the public subnets are attached with one route table and private subnets are attached with another. 
+
+Subnets should be attched with route tables. Route tables define how to handle the traffic within the subnets. After that public subnets have a destination called internet gateway via their route table that opens the subnets to the internet while private subnets are are destined to a VPC endpoint - S3 bucket. Instead of S3 bucket you can either choose any other endpoint or not.
 
 Change the architecture according to your needs. Below is based on that.
 
@@ -254,14 +260,38 @@ Network Mapping
 
 1.Select Created VPC earlier
 
-2.Mapping -Select public subnets
+2.Mapping - Select the 2 public subnets cretaed earlier. (Load balancers are connected via the public subnets of the VPC)
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/787029d8-3891-49f5-ae98-70745a4186c1" alt="h" width="600"/>
+
+Security Groups - Select all three option (Select the necessary security group to control the traffic to the VPC to ensure necessary ports are open of the Load Balancer. YEven you can choose the only one group.)
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/d7182c16-6153-4abe-a3a9-744afbfc2edd" alt="i" width="600"/>
+
+Listeners and routing 
+
+* Click on Create target group
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9dff422f-5b42-47f4-883a-6f9484bc8beb" alt="k" width="600"/>
 
+Specify group Details
+
+* Choose a target type-Instances
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/833fd128-1fa5-45b9-97e0-1174e2dc1448" alt="a" width="600"/>
+
+Enter target group name:aws-prod-example
+
+Protocol :port - HTTP ,Enter port 8000 (we ran the simple HTML file on port 8000 of the private instance)
+
+IP address type -IPv4
+
+VPC - Selected the cretaed VPC
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/a9037fa0-53e3-4e48-8a39-d3adc92ecbb8" alt="b" width="600"/>
+
+Health Check - Set Default
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/10503414-42a9-4b1b-b85a-a2e595aa2e92" alt="c" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/f94f87c5-9d5a-4db1-9f48-d39fc94789bc" alt="d" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b79cb865-4d9f-458a-9739-c2d511536cdf" alt="e 1" width="600"/>
@@ -274,3 +304,5 @@ Network Mapping
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/6128345d-e9d5-4d9a-9b79-f5113e6bd87b" alt="l" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/2f9357a0-9b53-41ad-93ef-93db4165cc24" alt="m" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/4e6fa37b-2569-45fe-acda-e7ab828ce15f" alt="o" width="600"/>
+
+![j](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b607ab78-82db-4880-a8b8-55153cfb54db)
