@@ -194,14 +194,28 @@ Now lets connect ssh with private instance,
 2.Copy private ip address
 
 
-![a](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/7494493a-7b7a-4962-b880-98814f8ed027)
-![b](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/1f6e04c4-edf7-4904-ac5d-33cf834dca66)
-![c](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/44eb506c-2deb-408c-a70a-0549c2a86888)
-![d](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/7ef03301-e74c-4abf-9d39-13abcb8a0d7e)
-![e](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/c01b8bc1-0b0e-4c0b-9dc6-8a9abb475504)
-![f](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/d6d9d766-24fc-46fd-8a60-1beb82d8e8c4)
-![g](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/bc5795e5-0f80-480f-8164-9f009f723a78)
-![h](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/787029d8-3891-49f5-ae98-70745a4186c1)
-![i](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/d7182c16-6153-4abe-a3a9-744afbfc2edd)
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/7494493a-7b7a-4962-b880-98814f8ed027" alt="a" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/1f6e04c4-edf7-4904-ac5d-33cf834dca66" alt="b" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/44eb506c-2deb-408c-a70a-0549c2a86888" alt="c" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/7ef03301-e74c-4abf-9d39-13abcb8a0d7e" alt="d" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/c01b8bc1-0b0e-4c0b-9dc6-8a9abb475504" alt="e" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/d6d9d766-24fc-46fd-8a60-1beb82d8e8c4" alt="f" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/bc5795e5-0f80-480f-8164-9f009f723a78" alt="g" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/787029d8-3891-49f5-ae98-70745a4186c1" alt="h" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/d7182c16-6153-4abe-a3a9-744afbfc2edd" alt="i" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9dff422f-5b42-47f4-883a-6f9484bc8beb" alt="k" width="600"/>
 
-![k](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9dff422f-5b42-47f4-883a-6f9484bc8beb)
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/833fd128-1fa5-45b9-97e0-1174e2dc1448" alt="a" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/a9037fa0-53e3-4e48-8a39-d3adc92ecbb8" alt="b" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/10503414-42a9-4b1b-b85a-a2e595aa2e92" alt="c" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/f94f87c5-9d5a-4db1-9f48-d39fc94789bc" alt="d" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b79cb865-4d9f-458a-9739-c2d511536cdf" alt="e 1" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/8b5c8c47-1953-4d05-ae73-a57cb86a95c7" alt="e" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/6f279936-9e91-46f4-931a-82554200a61f" alt="f" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/1653990e-66a0-44b1-bb81-cbe16443502d" alt="g" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/8ec90f78-99c5-403a-bcf2-79bec3bcd385" alt="h" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/3ce1430e-5e2c-4ca6-bbe5-61f6afa74593" alt="j" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/1e3f02f4-0086-4e0a-9532-2c474ee6b72a" alt="k" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/6128345d-e9d5-4d9a-9b79-f5113e6bd87b" alt="l" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/2f9357a0-9b53-41ad-93ef-93db4165cc24" alt="m" width="600"/>
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/4e6fa37b-2569-45fe-acda-e7ab828ce15f" alt="o" width="600"/>
