@@ -285,17 +285,11 @@ Network Mapping
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/787029d8-3891-49f5-ae98-70745a4186c1" alt="h" width="600"/>
 
-Security Groups - Select all three option (Select the necessary security group to control the traffic to the VPC to ensure necessary ports are open of the Load Balancer. YEven you can choose the only one group.)
+3.Security Groups - Select all three option (Select the necessary security group to control the traffic to the VPC to ensure necessary ports are open of the Load Balancer. YEven you can choose the only one group.)
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/d7182c16-6153-4abe-a3a9-744afbfc2edd" alt="i" width="600"/>
 
 Listeners and routing 
-
-We need to create a target group to define which private instances should be accessible for the Load Balancer.
-
-Specify group details - Choose target type as Instances ( We need the Load Balancer for our private subnets / instances that host our application)
-
-<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9dff422f-5b42-47f4-883a-6f9484bc8beb" alt="k" width="600"/>
 
 Click on Create target group
 
@@ -304,6 +298,14 @@ Specify group Details
 Choose a target type - Instances
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/833fd128-1fa5-45b9-97e0-1174e2dc1448" alt="a" width="600"/>
+
+We need to create a target group to define which private instances should be accessible for the Load Balancer.
+
+Specify group details - Choose target type as Instances ( We need the Load Balancer for our private subnets / instances that host our application)
+
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9dff422f-5b42-47f4-883a-6f9484bc8beb" alt="k" width="600"/>
+
+
 
 Enter target group name : aws-prod-example
 
