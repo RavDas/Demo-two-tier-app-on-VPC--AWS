@@ -178,7 +178,7 @@ Choose an Ubuntu Image (AMI) for your Bastion host.
 
 Instance Type - t2.micro
 
-Choose a key pair (aws-login.pem)
+Choose a key pair (aws-prod-example-keypair.pem)
 
 ![b](https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/668b3f66-10f8-4d7f-984d-ccf37ab077f1)
 
@@ -205,7 +205,7 @@ Now we need to securely copied our .pem file which is generated using key-pair c
 Go to terminal ,and run below command
 
 ```
-scp -i /home/raveen/Documents/aws_login.pem /home/raveen/Documents/aws_login.pem ubuntu@52.207.224.163:/home/ubuntu/
+scp -i /home/raveen/Documents/.-keypair.pem /home/raveen/Documents/aws-prod-example-keypair.pem ubuntu@52.207.224.163:/home/ubuntu/
 
 ## scp -i <.pem file name> <source path> <target path>
 
@@ -214,7 +214,7 @@ scp -i /home/raveen/Documents/aws_login.pem /home/raveen/Documents/aws_login.pem
 Check the file is transferred successfully or not
 
 ```
-ssh -i aws_login.pem ubuntu@52.207.224.163
+ssh -i aws-prod-example-keeypair.pem ubuntu@52.207.224.163
 
 ### ssh -i <.pem file name> ubuntu@<bastion-host_ip>
 
@@ -232,7 +232,7 @@ Now lets connect ssh with private instance,
 3.Run below command in terminal
 
 ```
-ssh -i "aws-login.pem" ubuntu@10.0.141.77
+ssh -i "aws-prod-example-keypair.pem" ubuntu@10.0.141.77
 
 ### ssh -i <pem file name> ubuntu@<ip address of private instance>
  
@@ -281,7 +281,7 @@ Network Mapping
 
 1.Select Created VPC earlier
 
-2.Mapping - Select the 2 public subnets cretaed earlier. (Load balancers are connected via the public subnets of the VPC)
+2.Mapping - Select the two availability zones with their relavant public subnets cretaed earlier. (Load balancers are connected via the public subnets of the VPC. Load balancer should be in the public subnets of the VPC)
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/787029d8-3891-49f5-ae98-70745a4186c1" alt="h" width="600"/>
 
@@ -291,19 +291,21 @@ Security Groups - Select all three option (Select the necessary security group t
 
 Listeners and routing 
 
+We need to create a target group to defin which private instance should be accessible for the Load Balancer
+
 * Click on Create target group
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9dff422f-5b42-47f4-883a-6f9484bc8beb" alt="k" width="600"/>
 
 Specify group Details
 
-* Choose a target type-Instances
+Choose a target type - Instances
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/833fd128-1fa5-45b9-97e0-1174e2dc1448" alt="a" width="600"/>
 
 Enter target group name:aws-prod-example
 
-Protocol :port - HTTP ,Enter port 8000 (we ran the simple HTML file on port 8000 of the private instance)
+Protocol :port - HTTP ,Enter port 8000 (We just need to run HTTP protocols only and we ran a simple HTML file on port 8000 of the private instance)
 
 IP address type -IPv4
 
@@ -314,9 +316,28 @@ VPC - Selected the cretaed VPC
 Health Check - Set Default
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/10503414-42a9-4b1b-b85a-a2e595aa2e92" alt="c" width="600"/>
+
+Select the two private subnets / instances
+
+Then click on "Include  as pending" and "Create target group"
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/f94f87c5-9d5a-4db1-9f48-d39fc94789bc" alt="d" width="600"/>
+
+Target group creation is successful.
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/b79cb865-4d9f-458a-9739-c2d511536cdf" alt="e 1" width="600"/>
+
+
+After you have created a target group, then go to the "Listerns and routing" section again and add the newly created traget group - "aws-prod-example".
+
+In the same section, choose the protocola as HTTP and port 80. (The port which we open for the Load Balancer. Make sure to open prot 80 of the chosen security groups when creating the Load Balancer to allow inbound traffic on port 80)
+
+<img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/9dff422f-5b42-47f4-883a-6f9484bc8beb" alt="k" width="600"/>
+
+Load balancer is created successfully
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/8b5c8c47-1953-4d05-ae73-a57cb86a95c7" alt="e" width="600"/>
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/6f279936-9e91-46f4-931a-82554200a61f" alt="f" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/1653990e-66a0-44b1-bb81-cbe16443502d" alt="g" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/8ec90f78-99c5-403a-bcf2-79bec3bcd385" alt="h" width="600"/>
