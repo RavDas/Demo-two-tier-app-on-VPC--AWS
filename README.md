@@ -30,7 +30,7 @@ Change the architecture according to your needs. Below is based on that.
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/07a6849e-b643-41a8-a2d6-4bc6ee25c194" alt="3" width="600"/>
 
-### Configure VPC:
+### Configure VPC
 
 Select VPC and more 
 
@@ -40,7 +40,7 @@ Use default settings for IPv4 CIDR block
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/93175247-6257-4053-bf37-72951d6e3731" alt="4" width="600"/>
 
-### Configure Subnets:
+### Configure Subnets
 
 Choose to have VPC in two different Availability Zones for better reliability. 
 
