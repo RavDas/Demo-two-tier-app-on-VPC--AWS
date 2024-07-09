@@ -197,9 +197,37 @@ Now lets connect ssh with private instance,
 
 
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/7494493a-7b7a-4962-b880-98814f8ed027" alt="a" width="600"/>
+
+3.Run below command in terminal
+
+```
+ssh -i "aws-login.pem" ubuntu@10.0.141.77
+
+### ssh -i <pem file name> ubuntu@<ip address of private instance>
+ 
+```
+Now we have successfully connected private subnet using bastion-host
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/1f6e04c4-edf7-4904-ac5d-33cf834dca66" alt="b" width="600"/>
+
+
+
+Now lets create Simple HTML file
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/44eb506c-2deb-408c-a70a-0549c2a86888" alt="c" width="600"/>
+
+Run index.html file on port 8000 -> 
+
+```
+python3 -m http.server 8000
+```
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/7ef03301-e74c-4abf-9d39-13abcb8a0d7e" alt="d" width="600"/>
+
+### Creating an Application Load Balancer on AWS
+
+Now go to EC2 Dashboard -> Click on Load Balancer
+
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/c01b8bc1-0b0e-4c0b-9dc6-8a9abb475504" alt="e" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/d6d9d766-24fc-46fd-8a60-1beb82d8e8c4" alt="f" width="600"/>
 <img src="https://github.com/RavDas/Demo-two-tier-app-on-VPC--AWS/assets/86109995/bc5795e5-0f80-480f-8164-9f009f723a78" alt="g" width="600"/>
